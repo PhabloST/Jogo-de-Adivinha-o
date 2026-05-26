@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        Bem vindo ao jogo de advinhação! Em quantas tentativas você consegue adivinhar o número sorteado?
+        <p>O número sorteado está entre 1 e 100.</p>
+    </header>
+    <main>
+        <input type="number" id="palpiteInput" placeholder="Digite seu palpite aqui..." min="1" max="100">
+        <button id="adivinharButton" onclick="verificarPalpite()">Adivinhar</button>
+        <div class="status" id="mensagem"></div>
+        <div class="contador" id="contadorTentativas">Tentativas: 0</div>
+        <button id="reiniciarButton" onclick="reiniciarJogo()" style="display: none;">Jogar novamente</button>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

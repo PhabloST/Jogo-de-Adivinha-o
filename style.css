@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #5a8dff 0%, #2a4d8f 55%, #121b32 100%);
+    color: #ffffff;
+}
+
+main {
+    width: min(420px, calc(100% - 32px));
+    padding: 32px;
+    border-radius: 24px;
+    background: rgba(18, 27, 50, 0.92);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+header {
+    margin-bottom: 28px;
+    text-align: center;
+    line-height: 1.5;
+    margin-right: 36px;
+}
+
+header p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+input[type='number'] {
+    width: 100%;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.18);
+    color: #08112a;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+input[type='number']:focus {
+    border-color: #91c3ff;
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.95);
+    color: #08112a;
+}
+
+button {
+    width: 100%;
+    padding: 16px 18px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+}
+
+#adivinharButton {
+    background: linear-gradient(135deg, #67d8ff, #3b76f6);
+    color: #08112a;
+}
+
+#adivinharButton:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+#reiniciarButton {
+    background: rgba(255, 255, 255, 0.12);
+    color: #e0ecff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#reiniciarButton:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+.status {
+    min-height: 54px;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.98rem;
+    color: #ffffff;
+}
+
+.contador {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+strong {
+    color: #d2f9ff;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 24px;
+    }
+
+    input[type='number'], button {
+        padding: 14px 16px;
+    }
+}
