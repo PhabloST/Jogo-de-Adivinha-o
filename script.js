@@ -1,4 +1,5 @@
 // Variáveis globais do jogo
+const MAX_TENTATIVAS = 10;
 let numeroSecreto = gerarNumeroSecreto();
 let tentativas = 0;
 
@@ -36,12 +37,21 @@ function verificarPalpite() {
 
     // Atualiza contador
     tentativas++;
-    divContador.textContent = `Tentativas: ${tentativas}`;
+    divContador.textContent = `Tentativas: ${tentativas} / ${MAX_TENTATIVAS}`;
 
     // Lógica do jogo
     if (palpite === numeroSecreto) {
         divMensagem.innerHTML = `Parabéns, você conseguiu!, o número secreto era <strong>${numeroSecreto}</strong>!`;
         divMensagem.style.color = '#28a745'; // Verde para certo
+
+        // Finaliza a rodada
+        inputPalpite.disabled = true;
+        adivinharButton.disabled = true;
+        reiniciarButton.style.display = 'block';
+    } else if (tentativas >= MAX_TENTATIVAS) {
+        // Fim de jogo - tentativas esgotadas
+        divMensagem.innerHTML = `Fim de jogo! Você atingiu o máximo de tentativas. O número secreto era <strong>${numeroSecreto}</strong>.`;
+        divMensagem.style.color = '#dc3545'; // Vermelho para derrota
 
         // Finaliza a rodada
         inputPalpite.disabled = true;
@@ -66,7 +76,7 @@ function reiniciarJogo() {
     tentativas = 0;
 
     // Reseta a interface
-    divContador.textContent = 'Tentativas: 0';
+    divContador.textContent = `Tentativas: 0 / ${MAX_TENTATIVAS}`;
     divMensagem.textContent = '';
     inputPalpite.disabled = false;
     adivinharButton.disabled = false;
